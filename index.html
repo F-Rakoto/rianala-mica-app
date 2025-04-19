@@ -5,21 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Suivi du rendement - Rianala Mining</title>
   <script>
-    function calculerTotal() {
+    function calculer() {
       const c1 = parseFloat(document.getElementById('cat1').value) || 0;
       const c2 = parseFloat(document.getElementById('cat2').value) || 0;
       const c3 = parseFloat(document.getElementById('cat3').value) || 0;
       const puces = parseFloat(document.getElementById('puces').value) || 0;
       const impuretes = parseFloat(document.getElementById('impuretes').value) || 0;
+
       const total = c1 + c2 + c3 + puces + impuretes;
+      const montant = (c1 * 55) + (c2 * 50) + (c3 * 30) + (puces * 30);
+
       document.getElementById('total').innerText = total.toFixed(2) + " kg";
+      document.getElementById('montant').innerText = montant.toLocaleString('fr-FR') + " Ar";
     }
   </script>
 </head>
 <body>
   <h1>Formulaire de rendement trieur - Rianala Mining</h1>
 
-  <form oninput="calculerTotal()">
+  <form oninput="calculer()">
     <label>Code Trieur:</label><br/>
     <input type="text" name="trieur" /><br/><br/>
 
@@ -46,6 +50,9 @@
 
     <strong>Total de production :</strong>
     <p id="total">0.00 kg</p>
+
+    <strong>Montant à payer :</strong>
+    <p id="montant">0 Ar</p>
 
     <button type="submit">Enregistrer</button>
   </form>
