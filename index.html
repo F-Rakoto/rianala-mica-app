@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rianala Mining - Suivi Mica</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suivi du rendement - Rianala Mining</title>
 </head>
 <body>
-  <h1>Bienvenue sur l'application de suivi du mica - Rianala Mining</h1>
-  <p>Première version en ligne. Testons ensemble le rendu.</p>
+  <h1>Formulaire de rendement trieur - Rianala Mining</h1>
+
+  <form>
+    <label>Code Trieur:</label><br/>
+    <input type="text" name="trieur" /><br/><br/>
+
+    <label>Numéro CIN:</label><br/>
+    <input type="text" name="cin" /><br/><br/>
+
+    <label>Code du lot brut:</label><br/>
+    <input type="text" name="lot" /><br/><br/>
+
+    <label>Catégorie 1 (kg):</label><br/>
+    <input type="number" name="cat1" /><br/><br/>
+
+    <label>Catégorie 2 (kg):</label><br/>
+    <input type="number" name="cat2" /><br/><br/>
+
+    <label>Catégorie 3 (kg):</label><br/>
+    <input type="number" name="cat3" /><br/><br/>
+
+    <label>Puces (kg):</label><br/>
+    <input type="number" name="puces" /><br/><br/>
+
+    <label>Impuretés (kg):</label><br/>
+    <input type="number" name="impuretes" /><br/><br/>
+
+    <button type="submit">Enregistrer</button>
+  </form>
 </body>
 </html>
