@@ -4,11 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Suivi du rendement - Rianala Mining</title>
+  <script>
+    function calculerTotal() {
+      const c1 = parseFloat(document.getElementById('cat1').value) || 0;
+      const c2 = parseFloat(document.getElementById('cat2').value) || 0;
+      const c3 = parseFloat(document.getElementById('cat3').value) || 0;
+      const puces = parseFloat(document.getElementById('puces').value) || 0;
+      const impuretes = parseFloat(document.getElementById('impuretes').value) || 0;
+      const total = c1 + c2 + c3 + puces + impuretes;
+      document.getElementById('total').innerText = total.toFixed(2) + " kg";
+    }
+  </script>
 </head>
 <body>
   <h1>Formulaire de rendement trieur - Rianala Mining</h1>
 
-  <form>
+  <form oninput="calculerTotal()">
     <label>Code Trieur:</label><br/>
     <input type="text" name="trieur" /><br/><br/>
 
@@ -19,19 +30,22 @@
     <input type="text" name="lot" /><br/><br/>
 
     <label>Catégorie 1 (kg):</label><br/>
-    <input type="number" name="cat1" /><br/><br/>
+    <input type="number" id="cat1" /><br/><br/>
 
     <label>Catégorie 2 (kg):</label><br/>
-    <input type="number" name="cat2" /><br/><br/>
+    <input type="number" id="cat2" /><br/><br/>
 
     <label>Catégorie 3 (kg):</label><br/>
-    <input type="number" name="cat3" /><br/><br/>
+    <input type="number" id="cat3" /><br/><br/>
 
     <label>Puces (kg):</label><br/>
-    <input type="number" name="puces" /><br/><br/>
+    <input type="number" id="puces" /><br/><br/>
 
     <label>Impuretés (kg):</label><br/>
-    <input type="number" name="impuretes" /><br/><br/>
+    <input type="number" id="impuretes" /><br/><br/>
+
+    <strong>Total de production :</strong>
+    <p id="total">0.00 kg</p>
 
     <button type="submit">Enregistrer</button>
   </form>
